@@ -5,91 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CI + Security Demo</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.6;
+    body { 
+      font-family: Arial, sans-serif; 
+      max-width: 800px; 
+      margin: 40px auto; 
+      line-height: 1.6; 
       background: #f9fafb;
-      color: #333;
-      padding: 0 15px;
-    }
-    h1, h2 {
-      color: #1e3a8a;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .card {
-      background: white;
       padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    pre {
-      background: #111827;
-      color: #f9fafb;
-      padding: 15px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-    code {
-      font-family: monospace;
-    }
+    h1, h2 { color: #1e3a8a; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     img {
       max-width: 100%;
+      border: 1px solid #ccc;
       border-radius: 8px;
-      margin: 15px 0;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-  <h1>CI + Security Demo 🚀</h1>
-  <p>This project demonstrates how to integrate <b>security checks into a CI/CD pipeline</b>. 
-     I configured GitHub Actions to run linting, SAST (Static Application Security Testing), 
-     and dependency vulnerability scans on every push.</p>
+  <h1>CI + Security Demo</h1>
+  <p>
+    This project demonstrates how to integrate security checks into a CI/CD pipeline. 
+    I configured GitHub Actions to run linting, SAST (Static Application Security Testing), 
+    and dependency vulnerability scans on every push.
+  </p>
 
-  <div class="card">
-    <h2>🔑 Key Highlights</h2>
-    <ul>
-      <li>GitHub Actions workflow with automated builds</li>
-      <li>Security scanning with tools like <b>Trivy</b> and <b>Bandit</b></li>
-      <li>Pipeline fails if critical vulnerabilities are found</li>
-    </ul>
-  </div>
+  <h2>Key Highlights</h2>
+  <ul>
+    <li>GitHub Actions workflow with automated builds</li>
+    <li>Security scanning with tools like <b>Trivy</b> and <b>Bandit</b></li>
+    <li>Pipeline fails if critical vulnerabilities are found</li>
+  </ul>
 
-  <div class="card">
-    <h2>📂 Example GitHub Actions Workflow</h2>
-    <pre><code>
-name: CI Security
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run Lint
-        run: pip install flake8 && flake8 .
-      - name: Run Bandit (Python Security Linter)
-        run: pip install bandit && bandit -r .
-      - name: Run Trivy (Dependency Scan)
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: fs
-          severity: CRITICAL,HIGH
-    </code></pre>
-  </div>
-
-  <div class="card">
-    <h2>📊 Pipeline Screenshot</h2>
-    <p>(Add a screenshot of your pipeline here for more impact)</p>
-    <img src="images/ci-pipeline.png" alt="CI/CD Security Pipeline">
-  </div>
+  <h2>Pipeline Screenshot</h2>
+  <p>Below is a real example of the CI/CD pipeline security scan in action:</p>
+  <img src="images/ci-pipeline.png" alt="CI/CD Pipeline Screenshot">
 
   <p><a href="index.html">⬅ Back to Portfolio</a></p>
 </body>
